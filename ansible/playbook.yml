@@ -20,11 +20,11 @@
         update_cache: true
         cache_valid_time: 3600
 
-    - name: Install Python 3.11, pip, venv, git, and nginx
+    - name: Install Python 3.12, pip, venv, git, and nginx
       ansible.builtin.apt:
         name:
-          - python3.11
-          - python3.11-venv
+          - python3.12
+          - python3.12-venv
           - python3-pip
           - git
           - nginx
@@ -107,7 +107,7 @@
     # -----------------------------------------------------------------------
     - name: Create Python virtual environment
       ansible.builtin.command:
-        cmd: python3.11 -m venv {{ venv_dir }}
+        cmd: python3.12 -m venv {{ venv_dir }}
         creates: "{{ venv_dir }}/bin/activate"
 
     - name: Upgrade pip inside venv
