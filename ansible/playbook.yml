@@ -65,6 +65,8 @@
       register: req_stat
       delegate_to: localhost
       become: false
+      vars:
+        ansible_connection: local
 
     - name: Upload requirements.txt
       ansible.builtin.copy:
@@ -91,6 +93,8 @@
       register: public_stat
       delegate_to: localhost
       become: false
+      vars:
+        ansible_connection: local
 
     - name: Upload public/ directory
       ansible.builtin.copy:
